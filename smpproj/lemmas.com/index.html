@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="A.Zharkov">
+        <meta name="description" content="Online notes. Easy-to-use and time-saving.">
+        <meta name="keywords" content="notes tips keep note online lemma lemmas memorandum memo free tip text текст заметки нотатки онлайн">
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="lava.js"></script>
+        <script type="text/javascript" src="style.js"></script>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <title>Lemmas Note Service</title>
+    </head>
+    <body>
+        <div id="navigation">
+          <a href="index.html"><div id="logonm"></div></a>
+          <a href="index.html"><div id="logoim"></div></a>
+          <div id="logon1" onmousedown="colorlgin('logon1','Images/logon.png')" onmouseup="login('logon1','Images/logon1.png')"></div>
+          <div id="logon2" onmousedown="colorlgin('logon2','Images/logon3.png')" onmouseup="regis('logon2','Images/logon2.png')">
+        </div>
+        </div>
+        <div id="registr">            
+            <form id="form_reg">
+              <div id="PD">
+              <input class="form_" id="form_name" name="form_name" type="text" placeholder="Your Name" pattern="^[a-zA-Z-А-Яа-яЁё]+$" title="Use only english or cyrillic letters. Don't use special signs." required/>
+              <input class="form_" id="form_login" name="form_login" type="text" placeholder="Create login" pattern="^[a-zA-Z-0-9]+$" title="Use only english letters. Don't use special signs." required/>
+              </div>
+              <div id="PS">
+              <input class="form__" id="pass_pass" name="pass_pass" type="password" placeholder="Password" pattern=".{8,16}" title="Minimum password length is 8." required/>
+              <input class="form__" id="pass_passval" name="pass_passvalt" type="password" placeholder="Password Confirming" pattern=".{8,16}" title="Minimum password length is 8." required/>
+              </div>
+              <div id="mail">
+              <input class="form___" id="pass_mail" name="pass_mail" type="e-mail" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required/>
+              </div>
+              <div id="checkbx">
+              <input class="form____" id="pass_agreement" name="pass_agreement" type="checkbox" required/>
+              </div>
+              <div id="smb">
+              <input id="pass_submit" value="" type="submit" onmousedown="colorlgin('pass_submit','Images/subm1.png')" onmouseup="coloron('pass_submit','Images/subm.png')"/>
+              </div>
+                <div id="error">
+                <div id="message1"></div>
+                <div id="message2"></div>
+                </div>
+            </form>
+        <div id="suc_reg">
+            <div id="msg_1"></div>
+            <div id="msg_2"></div>
+            <div id="msg_3"></div>
+            <div id="msg_4"></div>
+        </div>
+        </div>
+        <div id="loginf">
+        <form id="formlogin">
+            
+        </form>
+        </div>
+    </body>
+</html>
