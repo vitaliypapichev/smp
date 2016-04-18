@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?php require("ifsession.php"); ?>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="author" content="A.Zharkov">
         <meta name="description" content="Online notes. Easy-to-use and time-saving.">
         <meta name="keywords" content="notes tips keep note online lemma lemmas memorandum memo free tip text текст заметки нотатки онлайн">
-        <link rel="shortcut icon" href="">
+        <link rel="shortcut icon" href="Images/pencil-128.ico">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="lava.js"></script>
         <script type="text/javascript" src="style.js"></script>
@@ -14,12 +14,27 @@
     </head>
     <body>
         <div id="navigation">
-          <a href="index.html"><div id="logonm"></div></a>
-          <a href="index.html"><div id="logoim"></div></a>
+          <a href="http://lemmas.com/"><div id="logonm"></div></a>
+          <a href="http://lemmas.com/"><div id="logoim"></div></a>
+            <div id="menu" onclick="hover_menu()"><img src="Images/56763.png" id="men"></div>
+          <div id="exitbutton" name="exitbutton" type="button"></div>
+          <div id="userid" name="userid"><input id="txt" type="text" disabled readonly/></div> 
           <div id="logon1" onmousedown="colorlgin('logon1','Images/logon.png')" onmouseup="login('logon1','Images/logon1.png')"></div>
-          <div id="logon2" onmousedown="colorlgin('logon2','Images/logon3.png')" onmouseup="regis('logon2','Images/logon2.png')">
+          <div id="logon2" onmousedown="colorlgin('logon2','Images/logon3.png')" onmouseup="regis('logon2','Images/logon2.png')"></div>
+        </div>
+        <div id="toolbar"><div id="add" onclick="add_note()"><img id="image" src="Images/add.png"></div></div>
+        <div id="invis"></div>
+        <div id = "notes">
+            <div id="note0"></div>
         </div>
         </div>
+    <div id = "lemma">
+        <div id="headere"><img src="Images/header.png" id="headsub"></div>
+        <div class="closer" id="lemmadiv" onclick="closeform('lemma')"><img src="Images/close.png" class="closersub"></div>
+        <div id="textzone"><textarea id="subtextzone" spellcheck="false"></textarea></div>
+        <input id="zero" type="text" disabled/>
+        <div id="footr"><img src="Images/tip.png" id="footsub"></div>
+    </div>
         <div id="registr">            
             <form id="form_reg">
               <div id="PD">
@@ -34,7 +49,7 @@
               <input class="form___" id="pass_mail" name="pass_mail" type="e-mail" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required/>
               </div>
               <div id="checkbx">
-              <input class="form____" id="pass_agreement" name="pass_agreement" type="checkbox" required/>
+              <input class="form____" id="pass_agreement" onclick="open_submit()" name="pass_agreement" type="checkbox" required/>
               </div>
               <div id="smb">
               <input id="pass_submit" value="" type="submit" onmousedown="colorlgin('pass_submit','Images/subm1.png')" onmouseup="coloron('pass_submit','Images/subm.png')"/>
@@ -46,15 +61,18 @@
             </form>
         <div id="suc_reg">
             <div id="msg_1"></div>
-            <div id="msg_2"></div>
             <div id="msg_3"></div>
-            <div id="msg_4"></div>
         </div>
+            <div class="closer" id="wrongone" onclick="closeform('registr','')"><img src="Images/close.png" class="closersub"></div>
         </div>
         <div id="loginf">
+        <div class="closer" onclick="closeform('loginf','')"><img src="Images/close.png" class="closersub"></div>
         <form id="formlogin">
-            
+            <input class="chklogin" id="authlogin" name="authlogin" type="text" placeholder="Login" pattern="^[a-zA-Z-0-9]+$" title="Enter your login" required/>
+            <input class="chklogin" id="authpass" name="authpass" type="password" placeholder="Password" pattern=".{8,16}" title="Enter your password" required/>
+            <input id="authsubmit" value="" name="authsubmit" type="submit" onmousedown="colorlgin('authsubmit','Images/subm.png')" onmouseup="coloron('authsubmit','Images/subm1.png')"/>
         </form>
         </div>
+    <div id="mask"></div>
     </body>
 </html>

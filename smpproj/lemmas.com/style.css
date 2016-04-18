@@ -4,14 +4,235 @@ body
     padding: 0;
     background: #8F8F8F;
 }
+#zero
+{
+    visibility: hidden;
+}
 #navigation
 {
     height: 90px;
     width : 100%;
     background: RGB(100,65,165);
+    position: fixed;
+    border-bottom: 5px solid #D1D1D1;
+    border-top: 5px solid #D1D1D1;
+    z-index: 3;
+}
+#toolbar
+{
+    height: 40px;
+    width : 100%;
+    background: RGB(100,65,165);
+    position: fixed;
+    border-bottom: 5px solid #D1D1D1;
+    border-top: 5px solid #D1D1D1; 
+    margin-top: 50px;
+    z-index: 2;
+}
+#invis
+{
+    width: 100%;
+    height: 140px;
+    float: left;
+    background: #8F8F8F;
+}
+#menu
+{
+    height: 65px;
+    width: 65px;
+    margin-top: -35px;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    position: absolute;
+}
+#men
+{
+    height: 65px;
+    width: 65px;
+}
+#notes
+{
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    position: fixed;
+    z-index: 0;
+}
+.trashcan
+{
+    width:25px;
+    height: 25px;
+}
+.tcan
+{
+    width:25px;
+    height: 25px;
+    float: right;
+    margin-top: 10%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+.tcan:hover
+{
+    -webkit-filter:brightness(20%);
+    -moz-filter:brightness(20%);
+    filter:brightness(20%);
+}
+.pencil
+{
+    width:25px;
+    height: 25px;
+}
+.tpen
+{
+    width:25px;
+    height: 25px;
+    float: right;
+    margin-top:5%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+.tpen:hover
+{
+    -webkit-filter:brightness(20%);
+    -moz-filter:brightness(20%);
+    filter:brightness(20%);
+}
+#headere
+{
+    height: 60px;
+    width: 350px;
+    float: left;
+    margin-left: 29%;
+    margin-top: 15px;
+}
+#headsub
+{
+    width: 350px;
+    height: 60px;
+}
+#subtextzone
+{
+    resize: none;
+    overflow: auto;
+    outline: none;
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    font-size: 13pt;
+    font-family: Century Gothic, serif;   
+    border : outset;
+    border-width: 5px;
+    border-color: #C2C2C2;
+}
+#textzone
+{
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 85px;
+}
+.vis
+{
+    float: left;
+    opacity: 0;
+    width: 150px;
+    height: 90px;
+    margin-top: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+.par
+{
+    z-index: 1;
+    border: none;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    font-size: 12pt;
+    font-family: Century Gothic, serif;  
+    width: 100%;
+    height: 100%;
+}
+#footr
+{
+    width: 750px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+#footsub
+{
+    width: 750px;
+    height: 50px;
+}
+.unvistext
+{
+    visibility: hidden;
+    position: absolute;
+    z-index: 0;
+    width: 0px;
+    height: 0px;
+}
+.note
+{
+    margin-left: 5%;
+    margin-top: 60px;
+    height: 110px;
+    width: 200px; 
+    float: left;
+    background: white;
+    z-index: 0;
+}
+#mask 
+{
+    background-color:black;
+    height:100%;
+    position:fixed;
+    width:100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 4;
+}
+.closer
+{
+    float: right;
+    margin-right: 2%;
+    width:75px;
+    height: 75px;
+    cursor: pointer;
+    z-index: 10;
+}
+.closersub
+{
+    width:75px;
+    height: 75px;
+}
+#wrongone
+{
+    margin-top: -15px;
+}
+#image
+{
+    height: 35px;
+    width: 85px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+#add
+{
+    margin-left:25%;
+    float: left;
+    height: 40px;
+    width: 90px;
+    cursor: pointer;
+    border-right: 5px solid #D1D1D1;
+    border-left: 5px solid #D1D1D1;
 }
 #navigation #logonm
 {
@@ -41,7 +262,7 @@ body
 }
 #navigation #logon1
 {
-    height: 71px;
+    height: 68px;
     width: 100px;
     float: right;
     margin-right: 40px;
@@ -51,30 +272,68 @@ body
     background : url(Images/logon1.png) no-repeat center;
     background-attachment: local;
     background-size: 100%;
-    visibility: visible;
+    visibility: hidden;
     
 }
+#navigation #exitbutton
+{
+    height: 71px;
+    width: 100px;
+    float: right;
+    margin-right: 45px;
+    margin-top: 7px;
+    margin-bottom: 12px;
+    background : url(Images/Logout.png) no-repeat center;
+    background-attachment: local;
+    background-size: 100%;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+}
+#navigation #userid
+{
+    height: 40px;
+    width: 180px;
+    float: right;
+    margin-right: 60px;
+    margin-top: 22px;
+    visibility: hidden;
+    position: absolute;
+}
+#navigation #txt
+{
+    height: 40px;
+    width: 180px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 15pt;
+    text-align: center;
+    color: RGB(100,65,165);
+    background: #949494;
+    border: 3px outset;
+}
+
 #navigation #logon2
 {
-    height: 78px;
+    height: 71px;
     width: 100px;
     float: right;
     margin-right: 40px;
-    margin-top: 4px;
-    margin-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom: 12px;
     cursor: pointer;
     background : url(Images/logon2.png) no-repeat center;
     background-attachment: local;
     background-size: 100%;
-    visibility: visible;
+    visibility: hidden;
 }
 #registr 
 {
+    z-index: 5;
     height: 480px;
     width: 800px;
     margin: auto;
-    top : 80px;
-    bottom: 0px;
+    top : 0px;
+    bottom: 30px;
     right: 0px;
     left: 0px;
     position: fixed;
@@ -86,24 +345,28 @@ body
     border-color: #C2C2C2;
     visibility: hidden;
 }
-#login 
+#lemma
 {
+    z-index: 5;
     height: 480px;
     width: 800px;
     margin: auto;
-    top : 80px;
-    bottom: 0px;
+    top : 0px;
+    bottom: 30px;
     right: 0px;
     left: 0px;
     position: fixed;
-    background: linear-gradient(to bottom, RGB(100,65,165), #8C72B8);
+    visibility: hidden;
     opacity: 0;
     border-radius: 50px;
+    border : outset;
+    border-width: 5px;
+    border-color: #C2C2C2;
 }
 #registr #reg_form
 {
     opacity: 1;
-    visibility: visible;
+    visibility: hidden;
 }
 #registr .form_
 {
@@ -169,11 +432,12 @@ body
 }
 #loginf
 {
+    z-index: 5;
     height: 480px;
     width: 800px;
     margin: auto;
-    top : 80px;
-    bottom: 0px;
+    top : 0px;
+    bottom: 30px;
     right: 0px;
     left: 0px;
     position: fixed;
@@ -197,47 +461,24 @@ body
 {
     width : 700px;
     height: 50px;
-    background: url(Images/regis.png) no-repeat center;
-    background-size: 100%;
-    background-attachment: scroll;
-    visibility: hidden;
-}
-#registr #suc_reg #msg_2
-{
-    margin-top: 50px;
-    width : 700px;
-    height: 50px;
-    background: url(Images/joke.png) no-repeat center;
-    background-size: 100%;
-    background-attachment: scroll;
-    visibility: hidden;
+    opacity: 0;
 }
 #registr #suc_reg #msg_3
 {
     margin-top: 100px;
     width : 700px;
     height: 50px;
-    background: url(Images/pharse1.png) no-repeat center;
+    background: url(Images/regis.png) no-repeat center;
     background-size: 100%;
     background-attachment: scroll;
-    visibility: hidden;
-}
-#registr #suc_reg #msg_4
-{
-    margin-top: 150px;
-    width : 700px;
-    height: 50px;
-    background: url(Images/phrase2.png) no-repeat center;
-    background-size: 100%;
-    background-attachment: scroll;
-    visibility: hidden;
 }
 #registr #error
 {
     position: absolute;
     margin-left : 55%;
-    width:320px;
+    width:280px;
     height: 400px;
+    z-index: 9;
 }
 #registr #message1
 {
@@ -253,13 +494,48 @@ body
 }
 #registr #message2
 {
-    height: 150px;
-    width: 300px;
+    height: 170px;
+    width: 280px;
     margin-left: auto;
     margin-right: auto;
     background: url(Images/msg2.png) no-repeat center;
     background-size: 100%;
     background-attachment: scroll;
-    margin-top: -55px;
+    margin-top: -68px;
     visibility: hidden;
+}
+#loginf .chklogin
+{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+}
+#loginf #formlogin
+{
+    margin-left: 35%;
+}
+#loginf #authsubmit
+{
+    position: absolute;
+    float: left;
+    height: 57px;
+    width: 140px;
+    margin-left: 30px;
+    margin-top: 380px;
+    background-image: url(Images/subm1.png);
+    background-size: 100%;
+    background-attachment: local;
+    cursor: pointer;
+}
+#loginf #authlogin
+{
+    position: absolute;
+    float: left;
+    margin-top: 100px;
+}
+#loginf #authpass
+{
+    position: absolute;
+    float: left;
+    margin-top: 250px;
 }

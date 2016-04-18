@@ -1,4 +1,22 @@
-window.onload = function(){
+window.onload = function(e){
+       e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "ifsession.php",
+            data: "",
+            success: function(data)
+            {
+                alert(data);
+                if(data!="" && data.indexOf(" ") == -1)
+                {
+                    show_exit(data);
+                }
+                else
+                    {
+                        show_start();
+                    }
+            }
+        });
         $('#form_reg').submit(function(e){
         e.preventDefault();
         var password = document.getElementById("pass_pass");
@@ -22,54 +40,95 @@ window.onload = function(){
            msg2.style.visibility = "visible";     
         }
      });  
-    $('#form_login').keyup(function(e){
+    $('#formlogin').submit(function(e){
+        e.preventDefault();
+        var login = document.getElementById("authlogin");
+        var password = document.getElementById("authpass");
+        var sender = "login="+login.value+"&&pass="+password.value;
+        $.ajax({
+            type: "POST",
+            url: "validation.php",
+            data: sender,
+            dataType: "text",
+            success:
+            function(data)
+            {
+                alert(data);
+                if(data != "" && data.indexOf(" ") == -1)
+                {
+                    show_exit(data);
+                }
+            }
+        });
+    });
+    $("#subtextzone").bind('click focus blur mouseover ouseout mousemove change keyup',function(e){
+        e.preventDefault();
+        var info = document.getElementById("zero").value;
+        document.getElementById(info+"text").value = document.getElementById("subtextzone").value;
+        align(document.getElementById(info+"text").value,info+"par");     
+    }
+    );
+    $("#lemmadiv").click(function(e){
+        e.preventDefault();
+        if(document.getElementById("txt").value.length != 0)
+        {
+        var point = document.getElementById("zero").value;
+        var text = document.getElementById(point+"text").value;
+        var lemma = "note"+point;
+        var login = document.getElementById("txt").value;
+        var data1 = "text="+text+"&&lemma="+lemma+"&&login="+login;
+            $.ajax({
+                type: "POST",
+                url: "addnote.php",
+                data: data1,
+                dataType: "text",
+                success: function(data)
+                {
+                }
+            })
+        }
+    });
+    $('#form_login').bind('click focus blur mouseover mouseout mousemove change keyup',function(e){
         e.preventDefault();
         var form = document.getElementById("form_login").value;
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "lgget.php",
             data: "form_login="+form,
             dataType: "text",
             success: function(data)
             {
-                   var name = document.getElementById("form_name");
-                   var mail = document.getElementById("pass_mail");
                    var agree = document.getElementById("pass_agreement");
-                   var submit = document.getElementById("pass_submit");
-                   var pointer2 = false;
-                   var pointer3 = false;
-                   if(name.value.length >= 1 && data != "Login")
+                   if(data.length)
                    {
-                        if(data!="Login"){
+                        if(data!="Login")
+                        {
                            var msg2 = document.getElementById("message1");
                            msg2.style.visibility = "hidden";
+                           agree.disabled = false;
                         }
-                        pointer2 = true;
                    }
-                   if(mail.value.length >= 4)
-                   {
-                        pointer3 = true;
-                   }
-                    var result = pointer2 & pointer3 & agree.checked;
-                    if(result)
-                    {
-                        submit.style.backgroundImage = "url(Images/subm.png)";
-                        submit.style.Size = "100%";
-                        submit.style.backgroundAttachment = "local";
-                        submit.disabled = false;
-                    }
-                    else
-                    {
-                        if(data == "Login")
+                   else
                         {
                            var msg2 = document.getElementById("message1");
                            msg2.style.visibility = "visible";
+                           agree.disabled = true;
                         }
-                        submit.style.backgroundImage = "url(Images/subm1.png)";
-                        submit.style.Size = "100%";
-                        submit.style.backgroundAttachment = "local";
-                        submit.disabled = true;
-                    }
+            }
+        });
+    });
+    $('#exitbutton').click(function(e){
+        e.preventDefault();
+        $.ajax({
+           type: "POST",
+           url: "closesession.php",
+           data:"",
+           success:function(data)
+            {
+                if(data=="closing")
+                {
+                    show_start();
+                }
             }
         });
     });
