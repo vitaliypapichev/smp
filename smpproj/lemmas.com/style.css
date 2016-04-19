@@ -1,541 +1,717 @@
-body
-{
-    margin: 0;
-    padding: 0;
-    background: #8F8F8F;
+body {
+  margin: 0;
+  padding: 0;
+  background: #8F8F8F;
 }
-#zero
-{
-    visibility: hidden;
+
+#zero {
+  visibility: hidden;
 }
-#navigation
-{
-    height: 90px;
-    width : 100%;
-    background: RGB(100,65,165);
-    position: fixed;
-    border-bottom: 5px solid #D1D1D1;
-    border-top: 5px solid #D1D1D1;
-    z-index: 3;
+
+#navigation {
+  height: 90px;
+  width: 100%;
+  background: RGB(100, 65, 165);
+  position: fixed;
+  border-bottom: 5px solid #D1D1D1;
+  border-top: 5px solid #D1D1D1;
+  z-index: 3;
 }
-#toolbar
-{
-    height: 40px;
-    width : 100%;
-    background: RGB(100,65,165);
-    position: fixed;
-    border-bottom: 5px solid #D1D1D1;
-    border-top: 5px solid #D1D1D1; 
-    margin-top: 50px;
-    z-index: 2;
+
+#mess1 {
+  visibility: hidden;
+  opacity: 0;
+  margin-top: -180px;
+  width: 700px;
+  height: 80px;
+  background: url(Images/invalid.png) no-repeat center;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: 100%;
+  background-attachment: scroll;
 }
-#invis
-{
-    width: 100%;
-    height: 140px;
-    float: left;
-    background: #8F8F8F;
+
+#loading1 {
+  visibility: hidden;
+  opacity: 0;
+  width: 285px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 }
-#menu
-{
-    height: 65px;
-    width: 65px;
-    margin-top: -35px;
-    left: 50%;
-    top: 50%;
-    cursor: pointer;
-    position: absolute;
+
+.cssload-circle-1 {
+  height: 285px;
+  width: 285px;
+  background: rgb(97, 46, 141);
 }
-#men
-{
-    height: 65px;
-    width: 65px;
+
+.cssload-circle-2 {
+  height: 238px;
+  width: 238px;
+  background: rgb(194, 34, 134);
 }
-#notes
-{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 0;
+
+.cssload-circle-3 {
+  height: 190px;
+  width: 190px;
+  background: rgb(234, 34, 94);
 }
-.trashcan
-{
-    width:25px;
-    height: 25px;
+
+.cssload-circle-4 {
+  height: 143px;
+  width: 143px;
+  background: rgb(237, 91, 53);
 }
-.tcan
-{
-    width:25px;
-    height: 25px;
-    float: right;
-    margin-top: 10%;
-    margin-right: 2%;
-    cursor: pointer;
+
+.cssload-circle-5 {
+  height: 95px;
+  width: 95px;
+  background: rgb(245, 181, 46);
 }
-.tcan:hover
-{
-    -webkit-filter:brightness(20%);
-    -moz-filter:brightness(20%);
-    filter:brightness(20%);
+
+.cssload-circle-6 {
+  height: 48px;
+  width: 48px;
+  background: rgb(129, 197, 64);
 }
-.pencil
-{
-    width:25px;
-    height: 25px;
+
+.cssload-circle-7 {
+  height: 24px;
+  width: 24px;
+  background: rgb(0, 163, 150);
 }
-.tpen
-{
-    width:25px;
-    height: 25px;
-    float: right;
-    margin-top:5%;
-    margin-right: 2%;
-    cursor: pointer;
+
+.cssload-circle-8 {
+  height: 12px;
+  width: 12px;
+  background: rgb(22, 116, 188);
 }
-.tpen:hover
-{
-    -webkit-filter:brightness(20%);
-    -moz-filter:brightness(20%);
-    filter:brightness(20%);
+
+.cssload-circle-1,
+.cssload-circle-2,
+.cssload-circle-3,
+.cssload-circle-4,
+.cssload-circle-5,
+.cssload-circle-6,
+.cssload-circle-7,
+.cssload-circle-8 {
+  border-bottom: none;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  animation-name: cssload-spin;
+  -o-animation-name: cssload-spin;
+  -ms-animation-name: cssload-spin;
+  -webkit-animation-name: cssload-spin;
+  -moz-animation-name: cssload-spin;
+  animation-duration: 4600ms;
+  -o-animation-duration: 4600ms;
+  -ms-animation-duration: 4600ms;
+  -webkit-animation-duration: 4600ms;
+  -moz-animation-duration: 4600ms;
+  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
 }
-#headere
-{
-    height: 60px;
-    width: 350px;
-    float: left;
-    margin-left: 29%;
-    margin-top: 15px;
+
+@keyframes cssload-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-#headsub
-{
-    width: 350px;
-    height: 60px;
+
+@-o-keyframes cssload-spin {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
 }
-#subtextzone
-{
-    resize: none;
-    overflow: auto;
-    outline: none;
-    width: 500px;
-    height: 300px;
-    border-radius: 5px;
-    font-size: 13pt;
-    font-family: Century Gothic, serif;   
-    border : outset;
-    border-width: 5px;
-    border-color: #C2C2C2;
+
+@-ms-keyframes cssload-spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
 }
-#textzone
-{
-    width: 500px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 85px;
+
+@-webkit-keyframes cssload-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
-.vis
-{
-    float: left;
-    opacity: 0;
-    width: 150px;
-    height: 90px;
-    margin-top: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-    z-index: 2;
+
+@-moz-keyframes cssload-spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
 }
-.par
-{
-    z-index: 1;
-    border: none;
-    resize: none;
-    overflow: hidden;
-    outline: none;
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
-    font-family: Century Gothic, serif;  
+
+#toolbar {
+  height: 40px;
+  width: 100%;
+  background: RGB(100, 65, 165);
+  position: fixed;
+  border-bottom: 5px solid #D1D1D1;
+  border-top: 5px solid #D1D1D1;
+  margin-top: 50px;
+  z-index: 2;
+}
+
+#invis {
+  width: 100%;
+  height: 140px;
+  float: left;
+  background: #8F8F8F;
+}
+
+#menu {
+  height: 65px;
+  width: 65px;
+  margin-top: -35px;
+  left: 50%;
+  top: 50%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#men {
+  height: 65px;
+  width: 65px;
+}
+
+#notes {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+}
+
+.trashcan {
+  width: 35px;
+  height: 35px;
+}
+
+.tcan {
+  width: 35px;
+  height: 35px;
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.tcan:hover {
+  -webkit-filter: brightness(20%);
+  -moz-filter: brightness(20%);
+  filter: brightness(20%);
+}
+
+.pencil {
+  width: 35px;
+  height: 35px;
+}
+
+.tpen {
+  width: 35px;
+  height: 35px;
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.tpen:hover {
+  -webkit-filter: brightness(20%);
+  -moz-filter: brightness(20%);
+  filter: brightness(20%);
+}
+
+#headere {
+  height: 60px;
+  width: 350px;
+  float: left;
+  margin-left: 29%;
+  margin-top: 15px;
+}
+
+#headsub {
+  width: 350px;
+  height: 60px;
+}
+
+#subtextzone {
+  resize: none;
+  overflow: auto;
+  outline: none;
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+  font-size: 13pt;
+  font-family: Century Gothic, serif;
+  border: outset;
+  border-width: 5px;
+  border-color: #C2C2C2;
+}
+
+#textzone {
+  width: 500px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 85px;
+}
+
+.vis {
+  float: left;
+  opacity: 0;
+  width: 155px;
+  height: 110px;
+  margin-top: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.par {
+  z-index: 1;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  font-size: 12pt;
+  font-family: Century Gothic, serif;
+  width: 100%;
+  height: 100%;
+}
+
+#footr {
+  width: 750px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
+#footsub {
+  width: 750px;
+  height: 50px;
+}
+
+.unvistext {
+  visibility: hidden;
+  position: absolute;
+  z-index: 0;
+  width: 0px;
+  height: 0px;
+}
+
+.note {
+  margin-left: 5%;
+  margin-top: 60px;
+  height: 130px;
+  width: 230px;
+  float: left;
+  background: white;
+  z-index: 0;
+}
+
+#mask {
+  background-color: black;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.closer {
+  float: right;
+  margin-right: 2%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.closersub {
+  width: 75px;
+  height: 75px;
+}
+
+#wrongone {
+  margin-top: -15px;
+}
+
+#image {
+  height: 35px;
+  width: 85px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+#add {
+  margin-left: 25%;
+  float: left;
+  height: 40px;
+  width: 90px;
+  cursor: pointer;
+  border-right: 5px solid #D1D1D1;
+  border-left: 5px solid #D1D1D1;
+}
+
+#navigation #logonm {
+  height: 71px;
+  width: 311px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 9.5px;
+  margin-bottom: 9.5px;
+  background: url(Images/lmslogo.png) no-repeat center;
+  background-attachment: local;
+  background-size: 100%;
+}
+
+#navigation #logoim {
+  height: 71px;
+  width: 71px;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  background: url(Images/2000px-Black_pencil.svg.png) no-repeat center;
+  background-attachment: local;
+  background-size: 100%;
+}
+
+#navigation #logon1 {
+  height: 68px;
+  width: 100px;
+  float: right;
+  margin-right: 40px;
+  margin-top: 8px;
+  margin-bottom: 11px;
+  cursor: pointer;
+  background: url(Images/logon1.png) no-repeat center;
+  background-attachment: local;
+  background-size: 100%;
+  visibility: hidden;
+}
+
+#navigation #exitbutton {
+  height: 71px;
+  width: 100px;
+  float: right;
+  margin-right: 45px;
+  margin-top: 7px;
+  margin-bottom: 12px;
+  background: url(Images/Logout.png) no-repeat center;
+  background-attachment: local;
+  background-size: 100%;
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+}
+
+#navigation #userid {
+  height: 40px;
+  width: 180px;
+  float: right;
+  margin-right: 60px;
+  margin-top: 22px;
+  visibility: hidden;
+  position: absolute;
+}
+
+#navigation #txt {
+  height: 40px;
+  width: 180px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 15pt;
+  text-align: center;
+  color: RGB(100, 65, 165);
+  background: #949494;
+  border: 3px outset;
+}
+
+#navigation #logon2 {
+  height: 71px;
+  width: 100px;
+  float: right;
+  margin-right: 40px;
+  margin-top: 7px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background: url(Images/logon2.png) no-repeat center;
+  background-attachment: local;
+  background-size: 100%;
+  visibility: hidden;
+}
+
+#registr {
+  z-index: 5;
+  height: 480px;
+  width: 800px;
+  margin: auto;
+  top: 0px;
+  bottom: 30px;
+  right: 0px;
+  left: 0px;
+  position: fixed;
+  background: linear-gradient(to bottom, RGB(100, 65, 165), #8C72B8);
+  opacity: 0;
+  border-radius: 50px;
+  border: outset;
+  border-width: 5px;
+  border-color: #C2C2C2;
+  visibility: hidden;
+}
+
+.show{
     width: 100%;
     height: 100%;
+    margin-top: -5px;
+    text-align: center;
+    color: black;
+    font-size: 12pt;
+    font-family: Century Gothic, serif;
+    
 }
-#footr
-{
-    width: 750px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
+.time{
+    float: right;
+    height: 25px;
+    width: 54px;
+    margin-top: 3%;
+    margin-right: 3%;
+    opacity: 0;
 }
-#footsub
+
+.fulltime
 {
-    width: 750px;
-    height: 50px;
-}
-.unvistext
-{
-    visibility: hidden;
-    position: absolute;
-    z-index: 0;
     width: 0px;
     height: 0px;
-}
-.note
-{
-    margin-left: 5%;
-    margin-top: 60px;
-    height: 110px;
-    width: 200px; 
-    float: left;
-    background: white;
-    z-index: 0;
-}
-#mask 
-{
-    background-color:black;
-    height:100%;
-    position:fixed;
-    width:100%;
-    opacity: 0;
     visibility: hidden;
-    z-index: 4;
-}
-.closer
-{
-    float: right;
-    margin-right: 2%;
-    width:75px;
-    height: 75px;
-    cursor: pointer;
-    z-index: 10;
-}
-.closersub
-{
-    width:75px;
-    height: 75px;
-}
-#wrongone
-{
-    margin-top: -15px;
-}
-#image
-{
-    height: 35px;
-    width: 85px;
-    margin-left: 2px;
-    margin-top: 2px;
-}
-#add
-{
-    margin-left:25%;
-    float: left;
-    height: 40px;
-    width: 90px;
-    cursor: pointer;
-    border-right: 5px solid #D1D1D1;
-    border-left: 5px solid #D1D1D1;
-}
-#navigation #logonm
-{
-    height: 71px;
-    width: 311px;
-    float: left;
-    margin-left: 20px;
-    margin-top: 9.5px;
-    margin-bottom: 9.5px;
-    background : url(Images/lmslogo.png) no-repeat center;
-    background-attachment: local;
-    background-size: 100%;
-    
-}
-#navigation #logoim
-{
-    height: 71px;
-    width: 71px;
-    float: left;
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 14px;
-    background : url(Images/2000px-Black_pencil.svg.png) no-repeat center;
-    background-attachment: local;
-    background-size: 100%;
-    
-}
-#navigation #logon1
-{
-    height: 68px;
-    width: 100px;
-    float: right;
-    margin-right: 40px;
-    margin-top: 8px;
-    margin-bottom: 11px;
-    cursor: pointer;
-    background : url(Images/logon1.png) no-repeat center;
-    background-attachment: local;
-    background-size: 100%;
-    visibility: hidden;
-    
-}
-#navigation #exitbutton
-{
-    height: 71px;
-    width: 100px;
-    float: right;
-    margin-right: 45px;
-    margin-top: 7px;
-    margin-bottom: 12px;
-    background : url(Images/Logout.png) no-repeat center;
-    background-attachment: local;
-    background-size: 100%;
-    cursor: pointer;
-    visibility: hidden;
-    position: absolute;
-}
-#navigation #userid
-{
-    height: 40px;
-    width: 180px;
-    float: right;
-    margin-right: 60px;
-    margin-top: 22px;
-    visibility: hidden;
-    position: absolute;
-}
-#navigation #txt
-{
-    height: 40px;
-    width: 180px;
-    font-family: Tahoma, Geneva, sans-serif;
-    font-size: 15pt;
-    text-align: center;
-    color: RGB(100,65,165);
-    background: #949494;
-    border: 3px outset;
 }
 
-#navigation #logon2
-{
-    height: 71px;
-    width: 100px;
-    float: right;
-    margin-right: 40px;
-    margin-top: 7px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    background : url(Images/logon2.png) no-repeat center;
-    background-attachment: local;
-    background-size: 100%;
-    visibility: hidden;
+#lemma {
+  z-index: 5;
+  height: 480px;
+  width: 800px;
+  margin: auto;
+  top: 0px;
+  bottom: 30px;
+  right: 0px;
+  left: 0px;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 50px;
+  border: outset;
+  border-width: 5px;
+  border-color: #C2C2C2;
 }
-#registr 
-{
-    z-index: 5;
-    height: 480px;
-    width: 800px;
-    margin: auto;
-    top : 0px;
-    bottom: 30px;
-    right: 0px;
-    left: 0px;
-    position: fixed;
-    background: linear-gradient(to bottom, RGB(100,65,165), #8C72B8);
-    opacity: 0;
-    border-radius: 50px;
-    border : outset;
-    border-width: 5px;
-    border-color: #C2C2C2;
-    visibility: hidden;
-}
-#lemma
-{
-    z-index: 5;
-    height: 480px;
-    width: 800px;
-    margin: auto;
-    top : 0px;
-    bottom: 30px;
-    right: 0px;
-    left: 0px;
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-    border-radius: 50px;
-    border : outset;
-    border-width: 5px;
-    border-color: #C2C2C2;
-}
-#registr #reg_form
-{
-    opacity: 1;
-    visibility: hidden;
-}
-#registr .form_
-{
-    height: 30px;
-    float: left;
-    margin: 20px;
-}
-#registr .form__
-{
-    height: 30px;
-    float: left;
-    margin: 20px;  
 
+#registr #reg_form {
+  opacity: 1;
+  visibility: hidden;
 }
-#registr .form___
-{
-    height: 30px;
-    float:left;
-    margin: 20px;  
+
+#registr .form_ {
+  height: 30px;
+  float: left;
+  margin: 20px;
 }
-#registr .form____
-{
-    float:left;
-    margin: 20px;  
+
+#registr .form__ {
+  height: 30px;
+  float: left;
+  margin: 20px;
 }
-#registr #PD
-{
-    position: absolute;
-    margin-top: 65px;
-    margin-left: 20px;
+
+#registr .form___ {
+  height: 30px;
+  float: left;
+  margin: 20px;
 }
-#registr #PS
-{
-    position: absolute;
-    margin-top: 155px;
-    margin-left: 20px;
+
+#registr .form____ {
+  float: left;
+  margin: 20px;
 }
-#registr #mail
-{
-    position: absolute;
-    margin-top: 245px;
-    margin-left: 20px;
+
+#registr #PD {
+  position: absolute;
+  margin-top: 65px;
+  margin-left: 20px;
 }
-#registr #checkbx
-{
-    position: absolute;
-    margin-top: 315px;
-    margin-left: 20px;
+
+#registr #PS {
+  position: absolute;
+  margin-top: 155px;
+  margin-left: 20px;
 }
-#registr #smb
-{
-    position: absolute;
-    margin-top: 405px;
-    margin-left: 150px;
+
+#registr #mail {
+  position: absolute;
+  margin-top: 245px;
+  margin-left: 20px;
 }
-#registr #pass_submit
-{
-    height: 40px;
-    width: 100px;
-    background-image: url(Images/subm1.png);
-    background-size: 100%;
-    background-attachment: local;
+
+#registr #checkbx {
+  position: absolute;
+  margin-top: 315px;
+  margin-left: 20px;
 }
-#loginf
-{
-    z-index: 5;
-    height: 480px;
-    width: 800px;
-    margin: auto;
-    top : 0px;
-    bottom: 30px;
-    right: 0px;
-    left: 0px;
-    position: fixed;
-    background: linear-gradient(to bottom, RGB(100,65,165), #8C72B8);
-    opacity: 0;
-    border-radius: 50px;
-    border : outset;
-    border-width: 5px;
-    border-color: #C2C2C2;
-    visibility: hidden;
+
+#registr #smb {
+  position: absolute;
+  margin-top: 405px;
+  margin-left: 150px;
 }
-#registr #suc_reg
-{
-    position: absolute;
-    margin-left: 50px;
-    margin-top: 50px;
-    visibility: hidden;
-    opacity: 0;
+
+#registr #pass_submit {
+  height: 40px;
+  width: 100px;
+  background-image: url(Images/subm1.png);
+  background-size: 100%;
+  background-attachment: local;
 }
-#registr #suc_reg #msg_1
-{
-    width : 700px;
-    height: 50px;
-    opacity: 0;
+
+#loginf {
+  z-index: 5;
+  height: 480px;
+  width: 800px;
+  margin: auto;
+  top: 0px;
+  bottom: 30px;
+  right: 0px;
+  left: 0px;
+  position: fixed;
+  background: linear-gradient(to bottom, RGB(100, 65, 165), #8C72B8);
+  opacity: 0;
+  border-radius: 50px;
+  border: outset;
+  border-width: 5px;
+  border-color: #C2C2C2;
+  visibility: hidden;
 }
-#registr #suc_reg #msg_3
-{
-    margin-top: 100px;
-    width : 700px;
-    height: 50px;
-    background: url(Images/regis.png) no-repeat center;
-    background-size: 100%;
-    background-attachment: scroll;
+
+#registr #suc_reg {
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 50px;
+  visibility: hidden;
+  opacity: 0;
 }
-#registr #error
-{
-    position: absolute;
-    margin-left : 55%;
-    width:280px;
-    height: 400px;
-    z-index: 9;
+
+#registr #suc_reg #msg_1 {
+  width: 700px;
+  height: 50px;
+  opacity: 0;
 }
-#registr #message1
-{
-    height: 150px;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    background: url(Images/msg1.png) no-repeat center;
-    background-size: 100%;
-    background-attachment: scroll;
-    margin-top: 25px;
-    visibility: hidden;
+
+#registr #suc_reg #msg_3 {
+  margin-top: 100px;
+  width: 700px;
+  height: 50px;
+  background: url(Images/regis.png) no-repeat center;
+  background-size: 100%;
+  background-attachment: scroll;
 }
-#registr #message2
-{
-    height: 170px;
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
-    background: url(Images/msg2.png) no-repeat center;
-    background-size: 100%;
-    background-attachment: scroll;
-    margin-top: -68px;
-    visibility: hidden;
+
+#registr #error {
+  position: absolute;
+  margin-left: 55%;
+  width: 280px;
+  height: 400px;
+  z-index: 9;
 }
-#loginf .chklogin
-{
-    height: 50px;
-    width: 200px;
-    text-align: center;
+
+#registr #message1 {
+  height: 150px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url(Images/msg1.png) no-repeat center;
+  background-size: 100%;
+  background-attachment: scroll;
+  margin-top: 25px;
+  visibility: hidden;
 }
-#loginf #formlogin
-{
-    margin-left: 35%;
+
+#registr #message2 {
+  height: 170px;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url(Images/msg2.png) no-repeat center;
+  background-size: 100%;
+  background-attachment: scroll;
+  margin-top: -68px;
+  visibility: hidden;
 }
-#loginf #authsubmit
-{
-    position: absolute;
-    float: left;
-    height: 57px;
-    width: 140px;
-    margin-left: 30px;
-    margin-top: 380px;
-    background-image: url(Images/subm1.png);
-    background-size: 100%;
-    background-attachment: local;
-    cursor: pointer;
+
+#loginf .chklogin {
+  height: 50px;
+  width: 200px;
+  text-align: center;
 }
-#loginf #authlogin
-{
-    position: absolute;
-    float: left;
-    margin-top: 100px;
+
+#loginf #formlogin {
+  margin-left: 35%;
 }
-#loginf #authpass
-{
-    position: absolute;
-    float: left;
-    margin-top: 250px;
+
+#loginf #authsubmit {
+  position: absolute;
+  float: left;
+  height: 57px;
+  width: 140px;
+  margin-left: 30px;
+  margin-top: 380px;
+  background-image: url(Images/subm1.png);
+  background-size: 100%;
+  background-attachment: local;
+  cursor: pointer;
+}
+
+#loginf #authlogin {
+  position: absolute;
+  float: left;
+  margin-top: 100px;
+}
+
+#loginf #authpass {
+  position: absolute;
+  float: left;
+  margin-top: 250px;
 }
