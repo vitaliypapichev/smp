@@ -1,3 +1,14 @@
+function showmsg(){
+    document.getElementById("information").style.visibility = "hidden";
+    document.getElementById("footr").style.visibility = "visible";
+    setTimeout(function(){hidemsg()},1600);
+}
+
+function hidemsg(){
+    document.getElementById("information").style.visibility = "visible";
+    document.getElementById("footr").style.visibility = "hidden";
+}
+
 function showtime(data1, data2, data3, data4){
     $("#"+data4).click(function(e){
     e.preventDefault();
@@ -173,7 +184,7 @@ function basedelete(note) {
     var data1 = "login=" + login + "&&lemma=" + lemma;
     $.ajax({
       type: "POST",
-      url: "deletenote.php",
+      url: "phpcodes/deletenote.php",
       data: data1,
       dataType: "text",
       success: function(data) {

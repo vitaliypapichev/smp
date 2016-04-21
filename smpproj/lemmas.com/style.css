@@ -176,13 +176,14 @@ body {
 
 #toolbar {
   height: 40px;
-  width: 100%;
+  width: 99px;
   background: RGB(100, 65, 165);
   position: fixed;
   border-bottom: 5px solid #D1D1D1;
   border-top: 5px solid #D1D1D1;
   margin-top: 50px;
   z-index: 2;
+    margin-left: 49%;
 }
 
 #invis {
@@ -320,11 +321,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
+ visibility: hidden;
 }
 
 #footsub {
   width: 750px;
   height: 50px;
+  opacity: 0px;
 }
 
 .unvistext {
@@ -381,13 +384,26 @@ body {
 }
 
 #add {
-  margin-left: 25%;
   float: left;
   height: 40px;
   width: 90px;
   cursor: pointer;
   border-right: 5px solid #D1D1D1;
   border-left: 5px solid #D1D1D1;
+}
+
+#information{
+    width: 50px;
+    height: 50px;
+    margin-left: 48%;
+    margin-top: -55px;
+    float: left;
+    cursor: help;
+}
+
+#informationsub{
+    width: 50px;
+    height: 50px;
 }
 
 #navigation #logonm {
@@ -400,6 +416,21 @@ body {
   background: url(Images/lmslogo.png) no-repeat center;
   background-attachment: local;
   background-size: 100%;
+}
+
+#terms{
+  font-size: 13pt;
+  font-family: Century Gothic, serif;
+  color: #e7e7e7;
+  font-weight: 600;
+  cursor: help;
+  float: left;
+  margin-top: -75px;
+  margin-left: -70px;
+}
+
+#terms:hover{
+  color: #c2c2c2;
 }
 
 #navigation #logoim {

@@ -1,4 +1,4 @@
-<?php require("ifsession.php"); ?>
+<?php require("phpcodes/ifsession.php"); ?>
   <html>
 
   <head>
@@ -46,6 +46,7 @@
       </div>
       <input id="zero" type="text" disabled/>
       <div id="footr"><img src="Images/tip.png" id="footsub"></div>
+        <div id="information" onmouseover="showmsg()"><img id="informationsub" src="Images/info.png"></div>
     </div>
     <div id="registr">
       <form id="form_reg">
@@ -65,6 +66,7 @@
         </div>
         <div id="smb">
           <input id="pass_submit" value="" type="submit" onmousedown="colorlgin('pass_submit','Images/subm1.png')" onmouseup="coloron('pass_submit','Images/subm.png')" />
+        <p id="terms" onclick="showterms('terms')">I agree with terms of service</p>
         </div>
         <div id="error">
           <div id="message1"></div>

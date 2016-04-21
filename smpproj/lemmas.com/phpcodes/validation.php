@@ -1,7 +1,6 @@
 <?php
 	require("crt.php");
-	$db_link = @mysql_connect("localhost", "root", "");
-	mysql_select_db("lemmas", $db_link);
+    include 'dbconnect.php';
 	$pass = get_new_password($_POST["pass"]);
 	$query = "SELECT Login FROM `Users` WHERE `Login` = '".$_POST["login"]."' AND `Pass` = '".$pass."'";
 	$result = mysql_query($query);

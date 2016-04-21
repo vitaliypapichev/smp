@@ -2,7 +2,7 @@ window.onload = function(e) {
   e.preventDefault();
   $.ajax({
     type: "POST",
-    url: "ifsession.php",
+    url: "phpcodes/ifsession.php",
     data: "",
     success: function(data) {
       var temp;
@@ -31,7 +31,7 @@ window.onload = function(e) {
       var formitems = $("#form_reg").serialize();
       $.ajax({
         type: "POST",
-        url: "sender.php",
+        url: "phpcodes/sender.php",
         data: formitems,
         dataType: "text",
         success: validregistration()
@@ -48,7 +48,7 @@ window.onload = function(e) {
     var sender = "login=" + login.value + "&&pass=" + password.value;
     $.ajax({
       type: "POST",
-      url: "validation.php",
+      url: "phpcodes/validation.php",
       data: sender,
       dataType: "text",
       success: function(data) {
@@ -72,8 +72,7 @@ window.onload = function(e) {
       }
     });
   });
-  $("#subtextzone").bind('click focus blur mouseover mouseout mousemove change keyup', function(e) {
-    e.preventDefault();
+  $("#subtextzone").bind('focus blur mouseover mouseout mousemove change keyup', function() {
     var info = document.getElementById("zero").value;
     document.getElementById(info + "text").value = document.getElementById("subtextzone").value;
     align(document.getElementById(info + "text").value, info + "par");
@@ -89,7 +88,7 @@ window.onload = function(e) {
       var data1 = "text=" + text + "&&lemma=" + lemma + "&&login=" + login + "&&time=" + time;
       $.ajax({
         type: "POST",
-        url: "addnote.php",
+        url: "phpcodes/addnote.php",
         data: data1,
         dataType: "text",
         success: function(data) {}
@@ -101,12 +100,12 @@ window.onload = function(e) {
     var form = document.getElementById("form_login").value;
     $.ajax({
       type: "POST",
-      url: "lgget.php",
+      url: "phpcodes/lgget.php",
       data: "form_login=" + form,
       dataType: "text",
       success: function(data) {
         var agree = document.getElementById("pass_agreement");
-        if (data.length == 0) {
+        if(data!="Login") {
           if (data != "Login") {
             var msg2 = document.getElementById("message1");
             msg2.style.visibility = "hidden";
@@ -124,7 +123,7 @@ window.onload = function(e) {
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: "closesession.php",
+      url: "phpcodes/closesession.php",
       data: "",
       success: function(data) {
         if (data == "closing") {
